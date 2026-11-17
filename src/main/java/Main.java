@@ -11,7 +11,7 @@ import org.json.JSONObject;
 
 public class Main {
 
-    private static final String API_KEY = "YOUR_API_KEY"; // 여기에 API 키를 입력하세요
+    private static final String API_KEY = Env.require("GEMINI_API_KEY"); // 프로젝트 폴더의 .env 파일에서 읽는다
     private static final String MODEL_NAME = "gemini-3.1-flash-lite"; // 사용할 모델을 선택하세요
 
     // 선택 가능한 Gemini 모델:
