@@ -43,7 +43,7 @@ public class Main {
                 String result = image.run("src/main/iamge/" + (i % 10 + 1) + ".jpg");
                 System.out.println(i+"번째 출력");
                 results[i] = result;
-                Thread.sleep(2);
+                Thread.sleep(5);
             } catch (Exception e) {
                 System.out.println("---image fail---");
                 e.printStackTrace();
@@ -52,6 +52,14 @@ public class Main {
 
         for (int i = 0; i < results.length; i++) {
             System.out.println((i + 1) + "번째: " + results[i]);
+        }
+
+        // results 를 넘기면 output/results.txt 로 바로 저장한다
+        try {
+            System.out.println("저장 완료: " + TxtSaver.saveAll(results).toAbsolutePath());
+        } catch (Exception e) {
+            System.out.println("---save fail---");
+            e.printStackTrace();
         }
     }
 
